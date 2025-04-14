@@ -1,0 +1,888 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+#playWindow {
+  position: relative;
+  visibility: visible;
+  top: -550px;
+  border: 5px solid rgba(27, 27, 27, 0.966);
+  border-radius: 10px;
+  width: 600px;
+  height: 400px;
+  background-image: url("images/misc/logo-tile.png");
+  z-index: 1000;
+  opacity: 78%;
+}
+
+#playWindow img {
+  position: relative;
+  width: 350px;
+  filter: opacity(92%);
+}
+
+#playWindow button {
+  position: relative;
+  top: -24px;
+  font-size: 30px;
+  background: none;
+  color: #f3bf67;
+  text-shadow: 2px 0px black, -2px 0px black, 0px 2px black, 0px -2px black;
+  border: none;
+  width: 270px;
+  padding: 6px;
+  transition: 0.1s;
+  animation: blinker 1.6s linear infinite;
+}
+
+#playWindow button:hover {
+  animation: none;
+  cursor: pointer;
+  animation: blinker 0.3s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+#money {
+  position: relative;
+  display: flex;
+  visibility: hidden;
+  gap: 5px;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.716);
+  top: -1678px;
+  left: 4px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.538);
+  padding: 4px;
+  width: max-content;
+  cursor: default;
+}
+
+#coinIcon {
+  padding: 2px;
+}
+
+#xBetweenCoinAndAmount {
+  font-size: 12px;
+  padding-top: 12px;
+  padding-right: 1px;
+}
+
+#bait {
+  position: absolute;
+  display: flex;
+  visibility: hidden;
+  gap: 5px;
+  font-size: 30px;
+  color: rgba(0, 0, 0, 0.716);
+  top: 58px;
+  left: 4px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.538);
+  padding: 0px;
+  width: max-content;
+  cursor: default;
+  z-index: 2000;
+}
+
+#baitIcon {
+  padding: 8px;
+}
+
+#baitAmount {
+  padding-right: 4px;
+}
+
+#xBetweenBaitAndAmount {
+  font-size: 12px;
+  padding-top: 12px;
+  padding-right: 1px;
+  margin-left: -12px;
+}
+
+#homeIcon {
+  position: relative;
+  visibility: hidden;
+  top: -1640px;
+  left: 778px;
+  transition: 0s;
+}
+
+#settingsIcon {
+  position: relative;
+  visibility: hidden;
+  top: -1511px;
+  left: 796px;
+  filter: brightness(100%);
+  z-index: 6;
+  transition: 0s;
+}
+
+#settingsIcon:hover {
+  opacity: 70%;
+}
+
+#settingsWindow {
+  position: relative;
+  display: grid;
+  top: -2658px;
+  left: 926px;
+  margin-right: 940px;
+}
+
+#musicToggle,
+#soundToggle {
+  padding: 4px;
+  transition: 0.3s;
+}
+
+#musicToggle:hover,
+#soundToggle:hover {
+  transition: 0s;
+  opacity: 70%;
+  cursor: pointer;
+}
+
+#musicToggle {
+  position: relative;
+  top: -45px;
+  filter: grayscale(0%);
+}
+
+#soundToggle {
+  position: relative;
+  top: -83px;
+  filter: grayscale(0%);
+}
+
+#game {
+  position: relative;
+  width: 1000px;
+  height: 700px;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border: 8px solid black;
+}
+
+#bg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  filter: brightness(40%);
+}
+
+#hut {
+  position: relative;
+  visibility: hidden;
+  top: -508px;
+  left: 216px;
+}
+
+#fishermanIdle {
+  position: relative;
+  visibility: hidden;
+  top: -908px;
+  left: 130px;
+}
+
+#fishermanFishing {
+  position: relative;
+  visibility: hidden;
+  top: -908px;
+  left: -113px;
+}
+
+#fishermanHook {
+  position: relative;
+  visibility: hidden;
+  top: -908px;
+  left: -356px;
+}
+
+#message-box {
+  position: relative;
+  visibility: hidden;
+  width: 1000px;
+  height: 180px;
+  top: -912px;
+  left: -8px;
+  border: 8px solid black;
+  border-top-width: 18px;
+  border-top-style: double;
+  background: linear-gradient(rgba(27, 29, 38, 0.95), rgb(77, 87, 105));
+}
+
+#choice1,
+#choice2 {
+  display: inline-block;
+  border: none;
+  font-size: 38px;
+  color: whitesmoke;
+  background: none;
+  padding: 6px;
+  width: 500px;
+  margin-left: 250px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#choice1:hover,
+#choice2:hover {
+  transition: 0.1s;
+  border-radius: 10px;
+  background: rgba(245, 245, 245, 0.23);
+  cursor: pointer;
+}
+
+#messages {
+  position: relative;
+  visibility: hidden;
+  font-size: 38px;
+  color: whitesmoke;
+  top: 50px;
+  left: 8px;
+  cursor: default;
+}
+
+#storeIcon {
+  position: relative;
+  visibility: hidden;
+  top: -1554px;
+  left: 913px;
+  transition: 0s;
+}
+
+#inventoryIcon {
+  position: relative;
+  visibility: hidden;
+  top: -1598px;
+  left: 846px;
+}
+
+#inventoryIcon:hover,
+#storeIcon:hover,
+#settingsIcon:hover,
+#homeIcon:hover {
+  cursor: pointer;
+  filter: opacity(70%);
+}
+
+#inventoryWindow {
+  position: relative;
+  border: 4px solid black;
+  border-radius: 20px;
+  background-image: url("images/misc/inventory-background.jpg");
+  width: 700px;
+  height: 500px;
+  top: -1630px;
+  left: 142px;
+  filter: contrast(90%);
+  box-shadow: 0px 5px 40px rgba(0, 0, 0, 0.687);
+  z-index: 7;
+}
+
+#inventoryClose {
+  position: relative;
+  border: none;
+  top: -2120px;
+  left: 792px;
+  font-size: 40px;
+  background: none;
+  color: rgba(255, 255, 255, 0.46);
+  z-index: 7;
+}
+
+#inventoryClose:hover {
+  color: rgba(255, 255, 255, 0.791);
+  cursor: pointer;
+}
+
+#entireWindow {
+  visibility: hidden;
+}
+
+#fishDisplay {
+  position: relative;
+  visibility: hidden;
+  border: 6px solid rgba(0, 0, 0, 0.87);
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.832);
+  width: 150px;
+  height: 150px;
+  top: -2020px;
+  left: 50px;
+  z-index: 7;
+}
+
+.fishes {
+  position: relative;
+  visibility: hidden;
+  top: 30px;
+  left: 30px;
+}
+
+#angelfish {
+  position: relative;
+  visibility: hidden;
+  top: -90px;
+}
+
+#bass {
+  position: relative;
+  visibility: hidden;
+  top: -170px;
+}
+
+#catfish {
+  position: relative;
+  visibility: hidden;
+  top: -255px;
+}
+
+#clownfish {
+  position: relative;
+  visibility: hidden;
+  top: -340px;
+}
+
+#crab {
+  position: relative;
+  visibility: hidden;
+  top: -425px;
+}
+
+#goldfish {
+  position: relative;
+  visibility: hidden;
+  top: -505px;
+}
+
+#pufferfish {
+  position: relative;
+  visibility: hidden;
+  top: -590px;
+}
+
+#rusty_can {
+  position: relative;
+  visibility: hidden;
+  top: -675px;
+}
+
+#surgeonfish {
+  position: relative;
+  visibility: hidden;
+  top: -755px;
+}
+
+#trout {
+  position: relative;
+  visibility: hidden;
+  top: -840px;
+}
+
+#worm {
+  position: relative;
+  visibility: hidden;
+  top: -925px;
+}
+
+#rustyCan {
+  position: relative;
+  top: -674px;
+}
+
+#surgeonfish {
+  position: relative;
+  top: -758px;
+}
+
+#fishesInventory {
+  position: relative;
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: 80px 80px 80px 80px;
+  grid-template-rows: 80px 80px 80px;
+  gap: 50px;
+  top: -2278px;
+  left: 250px;
+  z-index: 7;
+}
+
+#fishName {
+  position: relative;
+  visibility: hidden;
+  max-width: 340px;
+  font-size: 50px;
+  color: rgba(235, 203, 139, 0.547);
+  border: 6px solid rgba(230, 198, 133, 0.291);
+  border-radius: 10px;
+  top: -2302px;
+  /* left: 460px; */
+  cursor: default;
+  z-index: 7;
+}
+
+#anchovy-I,
+#angelfish-I,
+#bass-I,
+#catfish-I,
+#clownfish-I,
+#crab-I,
+#goldfish-I,
+#pufferfish-I,
+#rustyCan-I,
+#surgeonfish-I,
+#trout-I,
+#worm-I {
+  position: relative;
+  background-color: rgba(31, 22, 15, 0.373);
+  border: 3px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0.7rem;
+  padding: 6px;
+  z-index: 7;
+}
+
+#anchovy-I:hover,
+#angelfish-I:hover,
+#bass-I:hover,
+#catfish-I:hover,
+#clownfish-I:hover,
+#crab-I:hover,
+#goldfish-I:hover,
+#pufferfish-I:hover,
+#rustyCan-I:hover,
+#surgeonfish-I:hover,
+#trout-I:hover,
+#worm-I:hover {
+  background-color: rgba(188, 188, 188, 0.492);
+  border-color: rgba(219, 219, 219, 0.791);
+}
+
+#fishCounts {
+  position: relative;
+  visibility: hidden;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 104px;
+  color: rgba(245, 245, 245, 0.954);
+  width: 320px;
+  z-index: 7;
+}
+
+#fishCounts p {
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+  padding: 4px;
+  width: 26px;
+  background-color: rgb(31, 22, 15);
+  top: -796px;
+  cursor: default;
+}
+
+#trophy1,
+#trophy2,
+#trophy3 {
+  visibility: hidden;
+  position: relative;
+  padding: 20px;
+  top: -2584px;
+  left: 637px;
+  z-index: 1;
+}
+
+#trophy1:hover,
+#trophy2:hover,
+#trophy3:hover {
+  filter: brightness(70%);
+}
+
+#trophyMessage {
+  position: absolute;
+  display: block;
+  visibility: hidden;
+  top: 200px;
+  left: 632px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.807);
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.809);
+  border: 4px solid rgba(255, 255, 255, 0.807);
+  border-radius: 12px;
+  padding: 30px;
+  width: 300px;
+  margin-right: 754px;
+  box-shadow: 0px 5px 10px rgba(104, 104, 104, 0.4);
+  z-index: 1;
+}
+
+#openStoreWindow {
+  position: absolute;
+  visibility: hidden;
+  /* border: 2px solid red; */
+  padding: 34px;
+  padding-top: 48px;
+  padding-bottom: 40px;
+  top: 278px;
+  left: 552px;
+  cursor: default;
+}
+
+#openStoreWindow:hover {
+  background-color: rgba(0, 0, 0, 0.702);
+  border-radius: 20px;
+  box-shadow: 20px 20px 40px rgba(129, 129, 129, 0.515);
+  cursor: pointer;
+}
+
+#openStoreWindow p {
+  visibility: hidden;
+  font-size: 40px;
+  color: rgba(245, 245, 245, 0.685);
+  padding: 0px;
+}
+
+#closeStoreWindow {
+  position: absolute;
+  top: 4px;
+  left: 809px;
+  font-size: 50px;
+  background: none;
+  color: rgba(255, 255, 255, 0.46);
+  z-index: 7;
+}
+
+#closeStoreWindow:hover {
+  color: rgba(255, 255, 255, 0.791);
+  cursor: pointer;
+}
+
+#storeWindow {
+  position: absolute;
+  visibility: hidden;
+  border: 4px solid rgb(245, 245, 245);
+  border-radius: 14px;
+  background: linear-gradient(rgba(0, 0, 0, 0.654), rgba(0, 0, 0, 0)),
+    url("images/store items/shelfBG.png");
+  background-size: 428px;
+  background-color: rgba(245, 245, 245, 0.592);
+  width: 870px;
+  height: 600px;
+  top: 42px;
+  left: 57px;
+  z-index: 3000;
+}
+
+#catStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 100px;
+  left: 190px;
+  padding: 44px;
+  filter: brightness(100%);
+  cursor: default;
+}
+
+#catStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#catStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 20px;
+  color: whitesmoke;
+  top: 8px;
+  left: 52px;
+}
+
+#bonsaiStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 278px;
+  left: 50px;
+  padding: 44px;
+  filter: brightness(100%);
+  cursor: default;
+}
+
+#bonsaiStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#bonsaiStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 20px;
+  color: whitesmoke;
+  top: 14px;
+  left: 65px;
+}
+
+#baitStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 120px;
+  left: 540px;
+  padding: 40px;
+  padding-bottom: 34px;
+  cursor: default;
+}
+
+#baitStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#baitStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 23px;
+  color: whitesmoke;
+  top: 12px;
+  left: 62px;
+}
+
+#houseLightStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 292px;
+  left: 480px;
+  padding: 40px;
+  filter: brightness(100%);
+  cursor: default;
+}
+
+#houseLightStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#houseLightStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 20px;
+  color: whitesmoke;
+  top: 19px;
+  left: 51px;
+}
+
+#benchStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 404px;
+  left: 180px;
+  padding: 40px;
+  filter: brightness(100%);
+  cursor: default;
+}
+
+#benchStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#benchStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 24px;
+  color: whitesmoke;
+  top: 12px;
+  left: 74px;
+}
+
+#sakuraTreeStoreItem {
+  position: absolute;
+  border-radius: 18px;
+  top: 322px;
+  left: 650px;
+  padding: 50px;
+  filter: brightness(100%);
+  cursor: default;
+}
+
+#sakuraTreeStoreItem:hover {
+  background: rgba(245, 245, 245, 0.296);
+}
+
+#sakuraTreeStoreItem p {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 21px;
+  color: whitesmoke;
+  top: 9px;
+  left: 35px;
+}
+
+#sellAllFish button {
+  position: absolute;
+  /* visibility: hidden; */
+  font-size: 40px;
+  color: rgba(0, 0, 0, 0.814);
+  border: 4px solid whitesmoke;
+  border-radius: 10px;
+  padding: 7px;
+  background: linear-gradient(rgb(97, 181, 91), rgb(60, 94, 63));
+  top: 16px;
+  left: 16px;
+}
+
+#sellAllFish button:active {
+  transition: 0.05s;
+  filter: brightness(50%);
+  color: whitesmoke;
+}
+
+#sellAllFish button:hover {
+  box-shadow: 0px 0px 14px rgba(245, 245, 245, 0.8);
+  cursor: pointer;
+}
+
+@-webkit-keyframes moveUp {
+  from {
+    top: 180px;
+  }
+  to {
+    top: 140px;
+  }
+}
+
+#plus1 {
+  position: absolute;
+  display: none;
+  visibility: visible;
+  color: rgb(18, 174, 18);
+  font-size: 50px;
+  top: 160px;
+  left: 680px;
+  opacity: 100%;
+  -webkit-animation-name: moveUp;
+  -webkit-animation-duration: 2.4s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes moveUpMoney {
+  from {
+    top: 40px;
+  }
+  to {
+    top: 20px;
+  }
+}
+
+#plusMoney {
+  position: absolute;
+  display: none;
+  visibility: visible;
+  color: rgb(18, 174, 18);
+  font-size: 50px;
+  top: 220px;
+  left: 232px;
+  opacity: 100%;
+  z-index: 1;
+  -webkit-animation-name: moveUpMoney;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-fill-mode: forwards;
+}
+
+#noMoreBait {
+  position: absolute;
+  visibility: hidden;
+  text-align: center;
+  font-size: 20px;
+  color: #cc0000;
+  top: 546px;
+  left: 280px;
+  animation: blinker 0.4s linear infinite;
+}
+
+#benchDisplay {
+  position: absolute;
+  visibility: hidden;
+  top: 377px;
+  left: 757px;
+}
+
+#bonsaiDisplay {
+  position: absolute;
+  visibility: hidden;
+  top: 290px;
+  left: 523px;
+}
+
+#catDisplay {
+  position: absolute;
+  visibility: hidden;
+  top: 140px;
+  left: 500px;
+}
+
+#sakuraTreeDisplay {
+  position: absolute;
+  visibility: hidden;
+  top: 118px;
+  left: 744px;
+}
+
+#houseLight1Display {
+  position: absolute;
+  visibility: hidden;
+  top: 90px;
+  left: 356px;
+  box-shadow: 0px 0px 40px rgb(255, 216, 144);
+  border-radius: 100%;
+}
+
+#houseLight2Display {
+  position: absolute;
+  visibility: hidden;
+  top: 90px;
+  left: 617px;
+  box-shadow: 0px 0px 40px rgb(255, 216, 144);
+  border-radius: 100%;
+}
+
+#secretFish {
+  position: absolute;
+  visibility: hidden;
+  top: 218px;
+  left: 30px;
+  z-index: 1000;
+  border-radius: 100%;
+}
+
+.secret-glow {
+  animation: glow 1.2s infinite;
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px gold) brightness(110%);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px gold) brightness(150%);
+  }
+  100% {
+    filter: drop-shadow(0 0 5px gold) brightness(110%);
+  }
+}
+
+#secretFishIcon {
+  position: absolute;
+  visibility: hidden;
+  top: 620px;
+  left: 12px;
+}

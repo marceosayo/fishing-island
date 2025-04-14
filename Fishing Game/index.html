@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/f8bb19abd6.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="icon" type="image/png" href="images/misc/favicon.png" />
+
+    <title>Fishing Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div id="game">
+      <img id="bg" src="images/misc/bg.gif" />
+      <img id="hut" src="images/misc/hut.png" />
+
+      <img id="fishermanIdle" src="images/fisherman/idle.gif" />
+      <img id="fishermanFishing" src="images/fisherman/fishing.gif" />
+      <img id="fishermanHook" src="images/fisherman/hook.gif" />
+
+      <div id="message-box">
+        <div class="choices">
+          <button id="choice1" class="allButtons">CAST FISHING ROD</button>
+          <button id="choice2" class="allButtons">OPEN INVENTORY</button>
+        </div>
+        <center>
+          <p id="messages"></p>
+        </center>
+      </div>
+
+      <img
+        id="storeIcon"
+        src="images/misc/shop-button.png"
+        class="allButtons"
+      />
+
+      <img
+        id="inventoryIcon"
+        src="images/misc/inventory.png"
+        class="allButtons"
+      />
+
+      <img
+        id="settingsIcon"
+        src="images/misc/settings-icon.png"
+        class="allButtons"
+        onclick="settingsOpenClose()"
+      />
+
+      <img id="homeIcon" src="images/misc/home-button.png" class="allButtons" />
+
+      <div id="money">
+        <img id="coinIcon" src="images/misc/coin.gif" />
+        <p id="xBetweenCoinAndAmount"><i class="fa-solid fa-xmark"></i></p>
+        <p id="moneyAmount"></p>
+      </div>
+
+      <span id="entireWindow">
+        <div id="inventoryWindow"></div>
+        <button id="inventoryClose" class="allButtons">
+          <i class="fa-solid fa-square-xmark"></i>
+        </button>
+      </span>
+
+      <div id="fishDisplay">
+        <div class="fishes">
+          <img
+            src="images/fish/anchovy.png"
+            id="anchovy"
+            style="visibility: hidden"
+            name="ANCHOVY"
+          />
+          <img
+            src="images/fish/angelfish.png"
+            id="angelfish"
+            style="visibility: hidden"
+            name="ANGELFISH"
+          />
+          <img
+            src="images/fish/bass.png"
+            id="bass"
+            style="visibility: hidden"
+            name="BASS"
+          />
+          <img
+            src="images/fish/catfish.png"
+            id="catfish"
+            style="visibility: hidden"
+            name="CATFISH"
+          />
+          <img
+            src="images/fish/clownfish.png"
+            id="clownfish"
+            style="visibility: hidden"
+            name="CLOWNFISH"
+          />
+          <img
+            src="images/fish/crab.png"
+            id="crab"
+            style="visibility: hidden"
+            name="CRAB"
+          />
+          <img
+            src="images/fish/goldfish.png"
+            id="goldfish"
+            style="visibility: hidden"
+            name="GOLDFISH"
+          />
+          <img
+            src="images/fish/pufferfish.png"
+            id="pufferfish"
+            style="visibility: hidden"
+            name="PUFFERFISH"
+          />
+          <img
+            src="images/fish/rusty_can.png"
+            id="rustyCan"
+            style="visibility: hidden"
+            name="RUSTY CAN"
+          />
+          <img
+            src="images/fish/surgeonfish.png"
+            id="surgeonfish"
+            style="visibility: hidden"
+            name="SURGEONFISH"
+          />
+          <img
+            src="images/fish/trout.png"
+            id="trout"
+            style="visibility: hidden"
+            name="TROUT"
+          />
+          <img
+            src="images/fish/worm.png"
+            id="worm"
+            style="visibility: hidden"
+            name="WORM"
+          />
+        </div>
+      </div>
+
+      <center>
+        <p id="fishName">INVENTORY</p>
+      </center>
+
+      <div id="fishesInventory">
+        <img
+          src="images/fish/anchovy.png"
+          id="anchovy-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/angelfish.png"
+          id="angelfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/bass.png"
+          id="bass-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/catfish.png"
+          id="catfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/clownfish.png"
+          id="clownfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/crab.png"
+          id="crab-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/goldfish.png"
+          id="goldfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/pufferfish.png"
+          id="pufferfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/rusty_can.png"
+          id="rustyCan-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/surgeonfish.png"
+          id="surgeonfish-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/trout.png"
+          id="trout-I"
+          style="filter: brightness(0%)"
+        />
+        <img
+          src="images/fish/worm.png"
+          id="worm-I"
+          style="filter: brightness(0%)"
+        />
+      </div>
+
+      <div id="settingsWindow">
+        <img
+          id="musicToggle"
+          src="images/misc/music-on copy.png"
+          class="allButtons"
+          style="visibility: hidden"
+          onclick="musicOnOff()"
+        />
+        <img
+          id="soundToggle"
+          src="images/misc/sound-on.png"
+          class="allButtons"
+          style="visibility: hidden"
+          onclick="soundOnOff()"
+        />
+      </div>
+
+      <div id="trophies">
+        <img src="images/misc/trophy1.png" id="trophy1" />
+        <img src="images/misc/trophy2.png" id="trophy2" />
+        <img src="images/misc/trophy3.png" id="trophy3" />
+      </div>
+      <p id="trophyMessage"></p>
+
+      <div id="openStoreWindow">
+        <p class="allButtons">ENTER<br />STORE</p>
+      </div>
+
+      <div id="storeWindow">
+        <div id="storeItems">
+          <div id="closeStoreWindow">
+            <i class="fa-solid fa-square-xmark"></i>
+          </div>
+
+          <div id="catStoreItem">
+            <p>CAT<br /><br /><br /><br /><br />$1000</p>
+            <img src="images/store items/cat store item.png" />
+          </div>
+
+          <div id="bonsaiStoreItem">
+            <p>BONSAI<br /><br /><br /><br /><br /><br /><br />$800</p>
+            <img src="images/store items/bonsai store item.png" />
+          </div>
+
+          <div id="houseLightStoreItem">
+            <p>ROOF LIGHTS<br /><br /><br /><br /><br /><br />$400</p>
+            <img src="images/store items/house light store item.png" />
+          </div>
+
+          <div id="baitStoreItem">
+            <p>BAIT<br /><br /><br />$1</p>
+            <img src="images/store items/bait store item.png" />
+          </div>
+
+          <div id="benchStoreItem">
+            <p>BENCH<br /><br /><br /><br /><br />$200</p>
+            <img src="images/store items/bench store item.png" />
+          </div>
+
+          <div id="sakuraTreeStoreItem">
+            <p>
+              SAKURA TREE<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />$1500
+            </p>
+            <img src="images/store items/sakura tree store item.png" />
+          </div>
+
+          <p id="plus1"></p>
+          <p id="plusMoney"></p>
+
+          <div id="sellAllFish">
+            <button id="sellFish" class="allButtons">SELL FISH</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="bait">
+        <img id="baitIcon" src="images/misc/baitIcon.gif" />
+        <p id="xBetweenBaitAndAmount"><i class="fa-solid fa-xmark"></i></p>
+        <p id="baitAmount"></p>
+      </div>
+
+      <div id="noMoreBait">
+        <p>
+          <b>SELL<br />FISH!</b>
+        </p>
+      </div>
+
+      <img id="sakuraTreeDisplay" src="images/misc/sakura tree.png" />
+      <img id="benchDisplay" src="images/misc/bench.png" />
+      <img id="bonsaiDisplay" src="images/misc/bonsai.png" />
+      <img id="catDisplay" src="images/misc/cat.gif" />
+      <img id="houseLight1Display" src="images/misc/house light 1.png" />
+      <img id="houseLight2Display" src="images/misc/house light 2.png" />
+
+      <img id="secretFish" src="images/fish/secret-fish.gif" />
+      <img id="secretFishIcon" src="images/fish/secret fish icon.gif" />
+    </div>
+
+    <center>
+      <div id="playWindow">
+        <img src="images/misc/logo.png" />
+        <button class="allButtons">START GAME</button>
+      </div>
+    </center>
+
+    <center>
+      <div id="fishCounts">
+        <p id="anchovyCount"></p>
+        <p id="angelfishCount"></p>
+        <p id="bassCount"></p>
+        <p id="catfishCount"></p>
+        <p id="clownfishCount"></p>
+        <p id="crabCount"></p>
+        <p id="goldfishCount"></p>
+        <p id="pufferfishCount"></p>
+        <p id="rustyCanCount"></p>
+        <p id="surgeonfishCount"></p>
+        <p id="troutCount"></p>
+        <p id="wormCount"></p>
+      </div>
+    </center>
+
+    <script src="script.js"></script>
+  </body>
+</html>
